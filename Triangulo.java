@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Triangulo {
+public class Triangulo {
 
     Scanner sc = new Scanner(System.in);
 

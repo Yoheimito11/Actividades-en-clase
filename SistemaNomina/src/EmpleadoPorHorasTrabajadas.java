@@ -12,7 +12,7 @@ public class EmpleadoPorHorasTrabajadas extends Empleado {
     private int horasTrabajadas;
     private double valorHoraOrdinaria;
 
-    // Constructor
+    
     public EmpleadoPorHorasTrabajadas(String nombre, String cargo, int horasTrabajadas,
                                       double valorHoraOrdinaria, HorasExtras horasExtras) {
         super(nombre, cargo, horasTrabajadas * valorHoraOrdinaria, horasExtras);
@@ -20,7 +20,7 @@ public class EmpleadoPorHorasTrabajadas extends Empleado {
         this.valorHoraOrdinaria = valorHoraOrdinaria;
     }
 
-    // Getters
+    
     public int getHorasTrabajadas() {
         return horasTrabajadas;
     }
@@ -29,7 +29,7 @@ public class EmpleadoPorHorasTrabajadas extends Empleado {
         return valorHoraOrdinaria;
     }
 
-    // Sobrescribe el método calcularRetencion
+    
     @Override
     public double calcularRetencion() {
         return 0;

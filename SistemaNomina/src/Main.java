@@ -24,33 +24,45 @@ public class Main {
 
                 case 1:
 
-                    System.out.print("Nombre: ");
-                    String nombre = sc.nextLine();
+    System.out.print("Nombre: ");
+    String nombre = sc.nextLine();
 
-                    System.out.print("Cargo: ");
-                    String cargo = sc.nextLine();
+    System.out.print("Cargo: ");
+    String cargo = sc.nextLine();
 
-                    System.out.print("Sueldo base: ");
-                    double sueldoBase = sc.nextDouble();
+    System.out.println("Tipo de empleado: 1. Tiempo completo  2. Por horas trabajadas");
+    int tipo = sc.nextInt();
+    sc.nextLine();
 
-                    System.out.print("Cantidad de horas extras: ");
-                    int horas = sc.nextInt();
+    System.out.print("Cantidad de horas extras: ");
+    int horas = sc.nextInt();
 
-                    System.out.print("Valor de cada hora extra: ");
-                    double valorHora = sc.nextDouble();
+    System.out.print("Valor de cada hora extra: ");
+    double valorHora = sc.nextDouble();
 
-                    HorasExtras horasExtras = new HorasExtras(horas, valorHora);
+    HorasExtras horasExtras = new HorasExtras(horas, valorHora);
+    Empleado nuevoEmpleado;
 
-                    EmpleadoTiempoCompleto empleado = new EmpleadoTiempoCompleto(
-                            nombre,
-                            cargo,
-                            sueldoBase,
-                            horasExtras);
+    if (tipo == 1) {
+        System.out.print("Sueldo base: ");
+        double sueldoBase = sc.nextDouble();
 
-                    nomina.agregarEmpleado(empleado);
+        nuevoEmpleado = new EmpleadoTiempoCompleto(nombre, cargo, sueldoBase, horasExtras);
 
-                    System.out.println("Empleado agregado correctamente.");
-                    break;
+    } else {
+        System.out.print("Horas trabajadas: ");
+        int horasTrabajadas = sc.nextInt();
+
+        System.out.print("Valor hora ordinaria: ");
+        double valorHoraOrdinaria = sc.nextDouble();
+
+        nuevoEmpleado = new EmpleadoPorHorasTrabajadas(nombre, cargo, horasTrabajadas, valorHoraOrdinaria, horasExtras);
+    }
+
+    nomina.agregarEmpleado(nuevoEmpleado);
+
+    System.out.println("Empleado agregado correctamente.");
+    break;
 
                 case 2:
 
